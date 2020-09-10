@@ -34,8 +34,16 @@ public class Window extends JFrame{
 			public void mouseClicked(MouseEvent e) {
 
 				for(int i=0; i < numParticles; i++) {
-					Particle proton = new Trion("Proton", mouseX, mouseY,Color.RED);
-					particles.add(proton);
+					Particle proton1 = new Squaron("Proton", mouseX, mouseY,Color.RED);
+					AccelParticle proton2 = new Trion("Proton", mouseX, mouseY,Color.RED);
+					Particle proton3 = new Particle("Proton", mouseX, mouseY,Color.RED);
+					Particle proton4 = new BrownianParticle("Proton", mouseX, mouseY,Color.RED);
+					Particle proton5 = new AccelParticle("Proton", mouseX, mouseY,Color.RED);
+					particles.add(proton1);
+					particles.add(proton2);
+					//particles.add(proton3);
+					//particles.add(proton4);
+					//particles.add(proton5);
 				}
 				
 			}
@@ -123,7 +131,7 @@ public class Window extends JFrame{
 				g2d.fillRect(0, 0, render.getWidth(), render.getHeight());
 				renderParticles(g2d);
 				g2d.dispose();
-
+				
 			}while(bufstrat.contentsRestored());
 			bufstrat.show();
 
@@ -134,6 +142,9 @@ public class Window extends JFrame{
 	{
 		for(int i=0; i < particles.size(); i++)
 			particles.get(i).render(g2d);
+		
+		
+		
 	}
 }
 
